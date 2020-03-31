@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>Identification</h2>
+    <form>
+        <table border-spacing=10px>
+            <tr>
+                <td>Courriel : </td>
+                <td><input type="email" [(ngModel)]="pro.courriel"/></td>
+            </tr>
+            <tr>
+                <td>Mot de passe : </td>
+                <td><input type="password" [(ngModel)]="pro.mdp"/></td>
+            </tr>
+            <tr>
+                <td>Type de profil : </td>
+                <td>    <input type="list"/><br> <!--ajouter une dataliste--></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button (click)="connecterUtilisateur()">Se connecter</button><br> <!--ajouter le clic-->
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href>Oublié son mot de passe?</a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href>Pas de profil? s'inscrire</a></td>
+            </tr>
+        </table>
+    </form>
+    <div *nfIf></div>
+</div>

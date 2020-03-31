@@ -1,0 +1,14 @@
+<p>recherche-pro works!</p>
+<button (click)="chercherPros()">Rechercher</button>
+
+<br>
+   {{chercherProActivated}}  <br>  
+    {{chercherProTerminated}}
+<br>
+{{liste_pro.length}}
+<div > <!-- *ngIf="liste_pro.length" -->
+    Liste <br>
+    <ul>
+        <li *ngFor="let pro of liste_pro">{{ pro.nom }}</li>
+    </ul>
+</div>

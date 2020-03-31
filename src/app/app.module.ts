@@ -3,16 +3,28 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { IdentificationComponent } from './identification/identification.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { RechercheProComponent } from './recherche-pro/recherche-pro.component';
+import { ProfilComponent } from './profil/profil.component';
+import { CreationProfilComponent } from './creation-profil/creation-profil.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IdentificationComponent,
+    RechercheProComponent,
+    ProfilComponent,
+    CreationProfilComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor (private http: HttpClient){} //pas sûr que ça va là. Ref: angular-notes-de-cours p.40
+ }
