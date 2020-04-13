@@ -29,4 +29,15 @@ export class ProfessionnelService {
   searchPros():Observable<Professionnel[]> {
     return this.http.get<Professionnel[]>(this.proUrl+"/Professionnels/Recherche");
   }
+
+  createPro(pro: Professionnel):Observable<Professionnel>{
+    return this.http.post<Professionnel>(this.proUrl, 
+      {
+        nom: pro.nom,
+        prenom: pro.prenom,
+        courriel: pro.courriel,
+        mdp: pro.mdp
+      }
+      , this.httpOptions);
+  }
 }

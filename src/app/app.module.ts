@@ -8,6 +8,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RechercheProComponent } from './recherche-pro/recherche-pro.component';
 import { ProfilComponent } from './profil/profil.component';
 import { CreationProfilComponent } from './creation-profil/creation-profil.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CreationProfilComponent } from './creation-profil/creation-profil.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

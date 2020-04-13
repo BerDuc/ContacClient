@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { IdentificationComponent } from './identification/identification.component';
 import { RechercheProComponent } from './recherche-pro/recherche-pro.component';
 import { ProfilComponent } from './profil/profil.component';
+import { CreationProfilComponent } from './creation-profil/creation-profil.component';
 
 const routes: Routes = [
   { path: 'identification', component: IdentificationComponent },
   { path: 'cherchePro', component: RechercheProComponent },
-  { path: 'profil/', component: ProfilComponent},
+  { path: 'profil', component: ProfilComponent},
+  { path: 'creation-profil', component: CreationProfilComponent},
   { path: '', redirectTo: '/identification', pathMatch: 'full' }
 ];
 

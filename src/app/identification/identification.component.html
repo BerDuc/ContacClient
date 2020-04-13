@@ -4,11 +4,11 @@
         <table border-spacing=10px>
             <tr>
                 <td>Courriel : </td>
-                <td><input type="email" [(ngModel)]="pro.courriel"/></td>
+                <td><input type="email" [value]="pro.courriel"/></td>
             </tr>
             <tr>
                 <td>Mot de passe : </td>
-                <td><input type="password" [(ngModel)]="pro.mdp"/></td>
+                <td><input type="password" [value]="pro.mdp"/></td>
             </tr>
             <tr>
                 <td>Type de profil : </td>
@@ -17,7 +17,7 @@
             <tr>
                 <td></td>
                 <td><button (click)="connecterUtilisateur()">Se connecter</button><br> <!--ajouter le clic-->
-                </td>
+            </td>
             </tr>
             <tr>
                 <td></td>
@@ -25,9 +25,12 @@
             </tr>
             <tr>
                 <td></td>
-                <td><a href>Pas de profil? s'inscrire</a></td>
+                <td><a routerLink="/creation-profil">Pas de profil? s'inscrire</a></td>
             </tr>
         </table>
     </form>
     <div *nfIf></div>
+</div>
+<div>
+    <a routerLink="/cherchePro">Aller vers la recherche</a>
 </div>

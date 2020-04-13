@@ -28,15 +28,19 @@ export class IdentificationComponent implements OnInit {
   }
 
   connecterUtilisateur(): void {
+    this.pro = new Professionnel();
     this.pro.courriel = this.courriel;
     this.pro.mdp = this.mdp;
 
+    this.proRecu = new Professionnel();
+    
     this.service.validerPro(this.pro).subscribe(proRecu => this.proRecu = proRecu[0]);
 
     if(this.proRecu.nom === "mauvaise identification" ){
       alert ("Mauvaise identification");
     } else {
       //activer le profil
+      console.log(this.pro);
     }
 
 
