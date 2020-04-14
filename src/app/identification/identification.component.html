@@ -4,11 +4,11 @@
         <table border-spacing=10px>
             <tr>
                 <td>Courriel : </td>
-                <td><input type="email" [value]="pro.courriel"/></td>
+                <td><input type="email" name="courriel" [(ngModel)]="courriel"/></td>
             </tr>
             <tr>
                 <td>Mot de passe : </td>
-                <td><input type="password" [value]="pro.mdp"/></td>
+                <td><input type="password" name="mdp" [(ngModel)]="mdp"/></td>
             </tr>
             <tr>
                 <td>Type de profil : </td>
@@ -29,7 +29,15 @@
             </tr>
         </table>
     </form>
-    <div *nfIf></div>
+    <div *ngIf="proRecu">
+        Profil <br>
+        <ul>
+            <li>{{ proRecu.nom }}</li>
+            <li>{{ proRecu.prenom }}</li>
+            <li>{{ proRecu.courriel }}</li>
+            <li>{{ proRecu.mdp }}</li>
+        </ul>
+    </div>
 </div>
 <div>
     <a routerLink="/cherchePro">Aller vers la recherche</a>
