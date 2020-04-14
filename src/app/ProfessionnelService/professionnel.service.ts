@@ -22,9 +22,14 @@ export class ProfessionnelService {
   }
 
   validerPro(pro: Professionnel):Observable<Professionnel[]>{
-   
-    return this.http.post<Professionnel[]>(this.proUrl+"/Identification", pro, this.httpOptions); //idéalement, ça devrait être GET, mais j'ai besoin d'un body
-  } ; 
+    //idéalement, ça devrait être GET, mais j'ai besoin d'un body, donc ce sera POST pour le moment
+    return this.http.post<Professionnel[]>(this.proUrl+"/Identification", 
+      {
+        courriel: pro.courriel,
+        mdp: pro.mdp
+      }, 
+      this.httpOptions); 
+  }  
 
   searchPros():Observable<Professionnel[]> {
     return this.http.get<Professionnel[]>(this.proUrl+"/Professionnels/Recherche");
