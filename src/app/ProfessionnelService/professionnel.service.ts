@@ -17,6 +17,11 @@ export class ProfessionnelService {
 
   constructor(private http: HttpClient) { }
 
+  getPro(id: number): Observable<Professionnel> {
+    return this.http.get<Professionnel>(this.proUrl+'/'+id);
+  }
+
+
   getPros(): Observable<Professionnel[]> {
     return this.http.get<Professionnel[]>(this.proUrl);
   }
