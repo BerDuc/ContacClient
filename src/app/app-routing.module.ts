@@ -8,7 +8,7 @@ import { CreationProfilComponent } from './creation-profil/creation-profil.compo
 const routes: Routes = [
   { path: 'identification', component: IdentificationComponent },
   { path: 'cherchePro', component: RechercheProComponent },
-  { path: 'profil', component: ProfilComponent},
+  { path: 'profil/:id', component: ProfilComponent},
   { path: 'creation-profil', component: CreationProfilComponent},
   { path: '', redirectTo: '/identification', pathMatch: 'full' }
 ];
