@@ -30,22 +30,28 @@ export class IdentificationComponent implements OnInit {
   connecterUtilisateur(): void {
     this.pro = new Professionnel();
     this.pro.courriel = this.courriel;
-    console.log(this.pro)
     this.pro.mdp = this.mdp;
 
-    this.proRecu = new Professionnel();
-    
-    this.service.validerPro(this.pro).subscribe(tableRecue => this.proRecu = tableRecue[0]);
+//    this.proRecu = new Professionnel();
 
-    if(this.proRecu.nom === "mauvaise identification" ){
-      alert ("Mauvaise identification");
-    } else {
-      //activer le profil
-      console.log(this.pro);
-      console.log("recu: "+this.proRecu);
-    }
-
+    let promise = new Promise((resolve, reject) => {
+      this.service.validerPro(this.pro).toPromise().then( proRecu =>
+        {
+          this.validerEtNaviguer(proRecu[0]);
+          resolve();
+        });
+    });
 
   }
 
+  private validerEtNaviguer(proRecu: Professionnel){ 
+    console.log("entrée dans 'validerEtNaviguer'");
+
+    if(proRecu.nom === "mauvaise identification"){
+      alert(proRecu.nom);
+    } else {
+      console.log(proRecu)
+      this.router.navigate(['profil/'+proRecu.utilisateurID]);
+    }
+  }
 }
