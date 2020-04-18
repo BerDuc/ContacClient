@@ -6,7 +6,18 @@
 <div id="onglet_profil">
     <div><!--Ici, le bloc de gauche avec, en haut, la présentation, et en bas, les disponibilités-->
         <div><!--La présentation-->
-    
+            <table border="2">
+                <tr>
+                    <td rowspan="3"></td>
+                    <td>Nom:    {{ pro.prenom }}   {{ pro.nom }}  *modifier*</td>
+                </tr>
+                <tr>
+                    <td>Contact:    {{ pro.courriel }}  *modifier*</td>
+                </tr>
+                <tr>
+                    <td>Spécialisation: ****  *modifier*</td>
+                </tr>
+            </table>
         </div>
         <div><!--Les disponibilités-->
     

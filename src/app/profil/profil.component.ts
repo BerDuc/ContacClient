@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Professionnel } from '../model/Professionnel';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ProfessionnelService } from '../ProfessionnelService/professionnel.service';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-profil',
@@ -13,13 +14,19 @@ export class ProfilComponent implements OnInit {
   @Input() pro: Professionnel;
 
   constructor(
-    private router: Router,
+    private route: ActivatedRoute,
     private servicePro: ProfessionnelService, 
-    private location: Location
-  ) { }
+      ) {   }
 
   ngOnInit(): void {
-    
+    //ici, initialiser pro
+    this.initialiserPro();    
+  }
+
+  private initialiserPro() {
+    console.log("initialiserPro");
+    let id = this.route.snapshot.paramMap.get('id');
+    this.servicePro.getPro(parseInt(id)).subscribe(pro => this.pro = pro);
   }
 
 }
