@@ -1,7 +1,7 @@
 import { Message } from './Message';
 
 export class Utilisateur {
-    private _utilisateur_ID : number;
+    private _utilisateurID : number;
     private _nom : string;
     private _prenom: string;
     private _addrPhoto: string; 
@@ -13,12 +13,12 @@ export class Utilisateur {
 
     constructor(){}
    
-    public get utilisateur_ID() : number {
-        return this._utilisateur_ID;
+    public get utilisateurID() : number {
+        return this._utilisateurID;
     }
 
-    public set utilisateur_ID(id: number) {
-        this._utilisateur_ID = id;
+    public set utilisateurID(id: number) {
+        this._utilisateurID = id;
     }
 
     public get nom(): string {
@@ -65,5 +65,12 @@ export class Utilisateur {
         this._messages_Recus = value;
     }
 
+    public get messages_Envoyes(): Message[]{
+        return this._messages_Envoyes;
+    }
+    
+    public set messages_Envoyes(value: Message[]){
+        this._messages_Envoyes = value;
+    }
     
 }
