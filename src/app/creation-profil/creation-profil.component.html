@@ -1,29 +1,33 @@
-<p>creation-profil works!</p>
-<div>
-    <form>
-        <table border='2'>
-            <tr>
-                <td>Nom</td>
-                <td><input type='text' name='nom' [(ngModel)]='nom'/></td>
-            </tr>
-            <tr>
-                <td>Prenom</td>
-                <td><input type='text' name='prenom' [(ngModel)]='prenom'/></td>
-            </tr>
-            <tr>
-                <td>Courriel</td>
-                <td><input type='text' name='courriel' [(ngModel)]='courriel'/></td>
-            </tr> 
-            <tr>
-                <td>Mot de passe</td>
-                <td><input type='password' name='mdp' [(ngModel)]='mdp'/></td>
-            </tr>
-            <tr>
-                <td colspan='2'><input type='button' value='Créer le profil' (click)='creerProfil()'/></td>
-            </tr> 
-
-        </table>
-    </form>
+<div class="section">
+    <div class="columns">
+        <div class="column is-4 is-offset-4">
+            <form>
+                <table border='2'>
+                    <tr>
+                        <td>Nom</td>
+                        <td><input type='text' name='nom' [(ngModel)]='nom'/></td>
+                    </tr>
+                    <tr>
+                        <td>Prenom</td>
+                        <td><input type='text' name='prenom' [(ngModel)]='prenom'/></td>
+                    </tr>
+                    <tr>
+                        <td>Courriel</td>
+                        <td><input type='text' name='courriel' [(ngModel)]='courriel'/></td>
+                    </tr> 
+                    <tr>
+                        <td>Mot de passe</td>
+                        <td><input type='password' name='mdp' [(ngModel)]='mdp'/></td>
+                    </tr>
+                    <tr class="has-text-centered">
+                        <td colspan='2'><input type='button' value='Créer le profil' (click)='creerProfil()'/></td>
+                    </tr> 
+        
+                </table>
+            </form>
+        </div>
+        
+    </div>
 </div>
 <div *ngIf="utilisateur">
     Profil <br>
