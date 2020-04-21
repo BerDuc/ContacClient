@@ -43,7 +43,7 @@ export class ProfessionnelService {
   }
 
   createPro(pro: Professionnel):Observable<Professionnel>{
-    var body = JSON.stringify(pro);
+    var body = pro.toJSON();
     console.log(body);
     return this.http.post<Professionnel>(this.proUrl, body, this.httpOptions);
   }
