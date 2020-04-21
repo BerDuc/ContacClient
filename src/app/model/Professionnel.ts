@@ -42,5 +42,34 @@ export class Professionnel extends Utilisateur {
     public set prestations(value: Prestation[]) {
         this._prestations = value;
     }
+    
  
+
+
+   //méthodes
+    public toJSON (): any {
+        return {
+            "UtilisateurID": this.utilisateurID,
+            "nom": this.nom,
+            "prenom": this.prenom,
+            "addrPhoto": this.addrPhoto,
+            "courriel": this.courriel,
+            "mdp": this.mdp,
+            "messages_Recus": this.messages_Recus,
+            "messages_Envoyes": this.messages_Envoyes,
+            "expertises": this._expertises,
+            "ententes": this._ententes,
+            "prestations": this._prestations
+        }
+/*
+private _addrCv: string;
+    
+    private _expertises: Expertise[];
+   
+    private _ententes: Entente[];
+    
+    private _prestations: Prestation[];   
+*/
+
+}
 }
