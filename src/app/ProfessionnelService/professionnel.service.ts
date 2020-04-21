@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Professionnel } from '../model/Professionnel';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { stringify } from 'querystring';
 
 @Injectable({
   providedIn: 'root'
@@ -36,18 +37,18 @@ export class ProfessionnelService {
       this.httpOptions); 
   }  
 
-  searchPros():Observable<Professionnel[]> {
-    return this.http.get<Professionnel[]>(this.proUrl+"/Professionnels/Recherche");
+  searchPros(criteres: string):Observable<Professionnel[]> {
+    console.log(criteres);
+    return this.http.get<Professionnel[]>(this.proUrl+"/Professionnels/expertise/"+criteres);
   }
 
   createPro(pro: Professionnel):Observable<Professionnel>{
-    return this.http.post<Professionnel>(this.proUrl, 
-      {
-        nom: pro.nom,
-        prenom: pro.prenom,
-        courriel: pro.courriel,
-        mdp: pro.mdp
-      }
-      , this.httpOptions);
+    var body = JSON.stringify(pro);
+    console.log(body);
+    return this.http.post<Professionnel>(this.proUrl, body, this.httpOptions);
+  }
+
+  modifPro(pro: Professionnel, champs: string, value: string): void {
+    this.http.put<Professionnel>(this.proUrl, pro, this.httpOptions);
   }
 }
