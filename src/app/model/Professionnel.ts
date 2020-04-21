@@ -42,6 +42,5 @@ export class Professionnel extends Utilisateur {
     public set prestations(value: Prestation[]) {
         this._prestations = value;
     }
-    
+ 
 }
-
