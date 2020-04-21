@@ -35,11 +35,18 @@ export class CreationProfilComponent implements OnInit {
     pro.courriel = this.courriel;
     pro.mdp = this.mdp;
 
-    console.log("recueilli: "+this.nom+" "+this.courriel);
-    console.log("assigné: "+pro.nom+" "+pro.courriel);
     //plus tard, ajouter une sélection sur le type d'utilisateur
 
-    this.service.createPro(pro).subscribe(utilisateur => this.utilisateur = utilisateur);
+
+    let promise = new Promise((resolve, reject) => {
+      this.service.createPro(pro).toPromise().then( proRecu =>
+        {
+          console.log("dans creation-profil: "+pro);
+          this.router.navigate(['profil/'+proRecu.utilisateurID]);
+          resolve();
+        });
+    });
 
   }
+
 }
