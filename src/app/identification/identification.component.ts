@@ -45,12 +45,10 @@ export class IdentificationComponent implements OnInit {
   }
 
   private validerEtNaviguer(proRecu: Professionnel){ 
-    console.log("entrée dans 'validerEtNaviguer'");
 
     if(proRecu.nom === "mauvaise identification"){
       alert(proRecu.nom);
     } else {
-      console.log(proRecu)
       this.router.navigate(['profil/'+proRecu.utilisateurID]);
     }
   }
