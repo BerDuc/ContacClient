@@ -43,12 +43,13 @@ export class ProfessionnelService {
   }
 
   createPro(pro: Professionnel):Observable<Professionnel>{
-    var body = pro.toJSON();
-    console.log(body);
-    return this.http.post<Professionnel>(this.proUrl, body, this.httpOptions);
+    return this.http.post<Professionnel>(this.proUrl, JSON.stringify(pro), this.httpOptions);
   }
 
-  modifPro(pro: Professionnel, champs: string, value: string): void {
-    this.http.put<Professionnel>(this.proUrl, pro, this.httpOptions);
+  modifPro(pro: Professionnel): Observable<any> {
+    var url = this.proUrl+"/"+pro.utilisateurID;
+    console.log(url);
+    console.log(JSON.stringify(pro));
+    return this.http.put(url, JSON.stringify(pro), this.httpOptions);
   }
 }
