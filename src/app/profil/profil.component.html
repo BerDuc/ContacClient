@@ -21,8 +21,12 @@
         </div>
     </div>
 </div>
-<div class="section">
-
+<div class="section"> <!--Afficher la liste des expertises avec la possibilité de faire des ajouts-->
+    <ol>
+        <li *ngFor="let e of pro.expertises">
+            {{ e.valeur }}
+        </li>
+    </ol>
 </div>        
 
 <div><!--Les disponibilités-->
