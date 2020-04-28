@@ -3,44 +3,38 @@
         <div class="column is-4 is-offset-4">
             <div class="container">
                 <h1 class="title has-text-centered">Identification</h1>
-                <form>
-                    <table border-spacing="20px">
-                        <tr>
-                            <td>Courriel : </td>
-                            <td><input type="email" name="courriel" [(ngModel)]="courriel"/></td>
-                        </tr>
-                        <tr>
-                            <td>Mot de passe : </td>
-                            <td><input type="password" name="mdp" [(ngModel)]="mdp"/></td>
-                        </tr>
-                        <tr>
-                            <td>Type de profil : </td>
-                            <td>    <input type="list"/><br> <!--ajouter une dataliste--></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><button (click)="connecterUtilisateur()">Se connecter</button><br> <!--ajouter le clic-->
-                        </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><a href>Oublié son mot de passe?</a></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><a routerLink="/creation-profil">Pas de profil? s'inscrire</a></td>
-                        </tr>
-                    </table>
-                </form>
-                <div *ngIf="proRecu">
-                    Profil <br>
-                    <ul>
-                        <li>{{ proRecu.nom }}</li>
-                        <li>{{ proRecu.prenom }}</li>
-                        <li>{{ proRecu.courriel }}</li>
-                        <li>{{ proRecu.mdp }}</li>
-                    </ul>
-                </div>
+                    <form>
+                        <div class="field">
+                            <div class="control has-icons-left">
+                                <input class="input" type="email" name="courriel" placeholder="courriel" [(ngModel)]="courriel"/>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                  </span>
+                            </div>
+                        </div>                          
+                        <div class="field">
+                            <div class="control has-icons-left">
+                                <input  class="input" type="password" name="mdp" placeholder="mot de passe" [(ngModel)]="mdp"/>
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-lock"></i>
+                                  </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <div class="select">
+                                    <select>
+                                        <option>Choisir le type de compte</option>
+                                        <option>Professionnel</option>
+                                        <option>Client</option>
+                                    </select>
+                                </div>
+                            </div>  
+                        </div>      
+                            <button class="button is-link" (click)="connecterUtilisateur()">Se connecter</button><br> <!--ajouter le clic-->
+                            <a href>Oublié son mot de passe?</a><br>
+                            <a routerLink="/creation-profil">Pas de profil? s'inscrire</a>
+                    </form>    
             </div>
         </div>
     </div>
