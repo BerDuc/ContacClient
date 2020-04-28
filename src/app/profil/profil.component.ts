@@ -12,6 +12,7 @@ import { switchMap } from 'rxjs/operators';
 export class ProfilComponent implements OnInit {
 
   @Input() pro: Professionnel;
+  modeEdition: boolean = false; 
 
   constructor(
     private route: ActivatedRoute,
@@ -28,5 +29,15 @@ export class ProfilComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id');
     this.servicePro.getPro(parseInt(id)).subscribe(pro => this.pro = pro);
   }
+
+  ouvrirModification(): void {
+    this.modeEdition = true;
+  }
+
+  changerInfos(): void{
+    this.servicePro.modifPro(this.pro).subscribe();
+    this.modeEdition = false;
+  }
+
 
 }
