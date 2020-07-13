@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
-import { ProfessionnelService } from '../ProfessionnelService/professionnel.service';
-import { Professionnel } from '../model/Professionnel';
+import { ProfessionnelService } from '../../services/ProfessionnelService/professionnel.service';
+import { Professionnel } from '../../model/Professionnel';
 
 @Component({
   selector: 'app-identification',
@@ -35,9 +35,9 @@ export class IdentificationComponent implements OnInit {
 //    this.proRecu = new Professionnel();
 
     let promise = new Promise((resolve, reject) => {
-      this.service.validerPro(this.pro).toPromise().then( proRecu =>
+      this.service.validerPro(this.pro.courriel, this.pro.mdp).toPromise().then( proRecu =>
         {
-          this.validerEtNaviguer(proRecu[0]);
+          this.validerEtNaviguer(proRecu);
           resolve();
         });
     });
