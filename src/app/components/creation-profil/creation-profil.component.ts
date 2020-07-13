@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Utilisateur } from '../model/Utilisateur';
-import { Professionnel } from '../model/Professionnel';
-import { ProfessionnelService } from '../ProfessionnelService/professionnel.service';
+import { Utilisateur } from '../../model/Utilisateur';
+import { Professionnel } from '../../model/Professionnel';
+import { ProfessionnelService } from '../../services/ProfessionnelService/professionnel.service';
 import { Router } from '@angular/router';
 
 @Component({
