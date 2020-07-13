@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Professionnel } from '../model/Professionnel';
-import { ProfessionnelService } from '../ProfessionnelService/professionnel.service';
+import { Professionnel } from '../../model/Professionnel';
+import { ProfessionnelService } from '../../services/ProfessionnelService/professionnel.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
