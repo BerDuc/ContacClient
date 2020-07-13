@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Professionnel } from '../model/Professionnel';
+import { Professionnel } from '../../model/Professionnel';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { ProfessionnelService } from '../ProfessionnelService/professionnel.service';
+import { ProfessionnelService } from '../../services/ProfessionnelService/professionnel.service';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
