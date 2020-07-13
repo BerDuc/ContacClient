@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { IdentificationComponent } from './identification/identification.component';
+import { IdentificationComponent } from './components/identification/identification.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { RechercheProComponent } from './recherche-pro/recherche-pro.component';
-import { ProfilComponent } from './profil/profil.component';
-import { CreationProfilComponent } from './creation-profil/creation-profil.component';
+import { RechercheProComponent } from './components/recherche-pro/recherche-pro.component';
+import { ProfilComponent } from './components/profil/profil.component';
+import { CreationProfilComponent } from './components/creation-profil/creation-profil.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
