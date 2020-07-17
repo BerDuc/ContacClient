@@ -15,15 +15,15 @@ const proUrl = environment.base_url_Api+'Professionnels/';
 export class ProfessionnelService {
 
   private currentProSubject: BehaviorSubject<Professionnel>;
-  public currentLogin: Observable<Professionnel>;
+  public currentUser: Observable<Professionnel>;
   
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
   constructor(private http: HttpClient) { 
-    this.currentProSubject = new BehaviorSubject<Professionnel>(JSON.parse(localStorage.getItem('currentUser')).value);
-    this.currentLogin = this.currentProSubject.asObservable();
+    this.currentProSubject = new BehaviorSubject<Professionnel>(JSON.parse(localStorage.getItem('currentUser')));
+    this.currentUser = this.currentProSubject.asObservable();
   }
 
 
@@ -39,12 +39,13 @@ export class ProfessionnelService {
   }
 //login et logout
 
-public get currentProValue(): Professionnel{
+public get currentUserValue(): Professionnel{
   return this.currentProSubject.value;
 }
 
-validerPro(courriel: string, password: string):Observable<Professionnel> {
-  console.log('${environment.apiUrl}/api/logins');
+  // login method
+validerPro(courriel: string, password: string) {
+  console.log("login");
   const headers = new HttpHeaders({'Content-Type':'application/json',
   'email':courriel,
   'password': password});

@@ -12,7 +12,6 @@ import { Login } from 'src/app/model/Login';
 export class IdentificationComponent implements OnInit {
 
   title = "Identification";
-  pro: Professionnel;
   Recu: Login;
   courriel: string;
   mdp: string;
@@ -47,11 +46,7 @@ export class IdentificationComponent implements OnInit {
   }
 
   connecterPro(): void {
-    this.pro = new Professionnel();
-    this.pro.courriel = this.courriel;
-    this.pro.mdp = this.mdp;
-
-      this.service.validerPro(this.pro.courriel, this.pro.mdp).subscribe(
+    this.service.validerPro(this.courriel, this.mdp).subscribe(
         data => {
           this.router.navigate(["/page-perso"]);
         }, 

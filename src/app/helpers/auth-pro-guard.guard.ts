@@ -13,7 +13,7 @@ export class AuthProGuardGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
 
-      const currentUser = this.authService.currentProValue;
+      const currentUser = this.authService.currentUserValue;
 
       if (currentUser){
         // user authentied
@@ -21,7 +21,7 @@ export class AuthProGuardGuard implements CanActivate {
       }
     
     // user not logged in
-      this.router.navigate(['/identification'],{queryParams:{returnUrl:state.url}});
+      this.router.navigate(['identification'],{queryParams:{returnUrl:state.url}});
       return false; }  
   
   
