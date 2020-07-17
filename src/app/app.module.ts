@@ -9,6 +9,9 @@ import { RechercheProComponent } from './components/recherche-pro/recherche-pro.
 import { ProfilComponent } from './components/profil/profil.component';
 import { CreationProfilComponent } from './components/creation-profil/creation-profil.component';
 import { FormsModule } from '@angular/forms';
+import { VignetteComponent } from './components/vignette/vignette.component';
+import { FicheComponent } from './components/fiche/fiche.component';
+import { PagePersoComponent } from './components/page-perso/page-perso.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { FormsModule } from '@angular/forms';
     IdentificationComponent,
     RechercheProComponent,
     ProfilComponent,
-    CreationProfilComponent
+    CreationProfilComponent,
+    VignetteComponent,
+    FicheComponent,
+    PagePersoComponent
   ],
   imports: [
     BrowserModule,

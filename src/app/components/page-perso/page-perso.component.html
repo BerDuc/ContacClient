@@ -1,0 +1,37 @@
+
+<div class="section">
+    <div class="tabs is-boxed">
+        <ul>
+            <li [ngClass]="{'is-active':profil_tab===true}" (click)="change_tab('profil_tab')"><a>Curriculum Vitae</a></li>
+            <li [ngClass]="{'is-active':cv_tab===true}" (click)="change_tab('cv_tab')"><a>Curriculum Vitae</a></li>
+            <li [ngClass]="{'is-active':offres_tab===true}" (click)="change_tab('offres_tab')"><a>Offres</a></li>
+        </ul>
+    </div>
+</div>
+<div class="section">
+    <div class="columns">
+        <div class="column is-1 is-offset-1">
+            <div class="column is-10">
+                <div class="table">
+                    <table>
+                        <tr>
+                            <td>Nom</td>
+                            <td><span>{{ pro.nom }},</span><span> {{ pro.prenom }}</span></td>
+                            <td><input class="button is-primary is-small" type="button" value="modifier" (click)=modifier_nom()></td>
+                        </tr>
+                        <tr>
+                            <td>Contact</td>
+                            <td>{{ pro.courriel }}</td>
+                            <td><input class="button is-primary is-small" type="button" value="modifier" (click)=modifier_contact()></td>
+                        </tr>
+                        <tr>
+                            <td>Spécialisation</td>
+                            <td>{{ pro.specialisation }}</td>
+                            <td><input class="button is-primary is-small" type="button" value="modifier" (click)=modifier_specialisation()></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

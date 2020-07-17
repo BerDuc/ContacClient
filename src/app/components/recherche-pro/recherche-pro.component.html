@@ -1,24 +1,16 @@
-<p>recherche-pro works!</p>
-
-
-
-<div class="container">
-    <button (click)="afficherPros()">Afficher toute la liste</button><br><br>
-
-<!--
- <input type='text' (value)='criteres'>
-    <button (click)="chercherProsCriteres()">Rechercher</button>
-
-    
--->
-       
-</div>
-
-
-<div class="container" > <!-- *ngIf="liste_pro.length" -->
-    {{liste_pro.length}}<br>
-    Liste <br>
-    <ul>
-        <li *ngFor="let pro of liste_pro">{{ pro.nom }}</li>
-    </ul>
+<div class="section">
+    <div class="columns">
+        <div class="column is-offset-1 is-1">
+            <select class="select">
+                <option>Nom</option>
+                <option>Specialité</option>
+            </select>
+        </div>
+        <div class="column is-6">
+            <input type="text" class="input" [(ngModel)]="txtRecherche">
+        </div>
+        <div class="column is-2">
+            <input type="button" class="button is-primary" value="Rechercher" (click)=chercher()>
+        </div>
+    </div>
 </div>

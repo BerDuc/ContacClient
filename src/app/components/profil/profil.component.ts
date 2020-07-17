@@ -14,6 +14,10 @@ export class ProfilComponent implements OnInit {
   @Input() pro: Professionnel;
   modeEdition: boolean = false; 
 
+
+
+
+
   constructor(
     private route: ActivatedRoute,
     private servicePro: ProfessionnelService, 
@@ -21,14 +25,9 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit(): void {
     //ici, initialiser pro
-    this.initialiserPro();    
   }
 
-  private initialiserPro() {
-    console.log("initialiserPro");
-    let id = this.route.snapshot.paramMap.get('id');
-    this.servicePro.getPro(parseInt(id)).subscribe(pro => this.pro = pro);
-  }
+
 
   ouvrirModification(): void {
     this.modeEdition = true;

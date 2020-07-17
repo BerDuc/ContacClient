@@ -2,25 +2,25 @@
     <div class="columns">
         <div class="column is-4 is-offset-4">
             <form>
-                <table border='2'>
+                <table class='table'>
                     <tr>
                         <td>Nom</td>
-                        <td><input type='text' name='nom' [(ngModel)]='nom'/></td>
+                        <td><input class="input" type='text' name='nom' [(ngModel)]='nom'/></td>
                     </tr>
                     <tr>
                         <td>Prenom</td>
-                        <td><input type='text' name='prenom' [(ngModel)]='prenom'/></td>
+                        <td><input type='text' class="input" name='prenom' [(ngModel)]='prenom'/></td>
                     </tr>
                     <tr>
                         <td>Courriel</td>
-                        <td><input type='text' name='courriel' [(ngModel)]='courriel'/></td>
+                        <td><input type='text' class="input" name='courriel' [(ngModel)]='courriel'/></td>
                     </tr> 
                     <tr>
                         <td>Mot de passe</td>
-                        <td><input type='password' name='mdp' [(ngModel)]='mdp'/></td>
+                        <td><input type='password' class="input" name='mdp' [(ngModel)]='mdp'/></td>
                     </tr>
                     <tr class="has-text-centered">
-                        <td colspan='2'><input type='button' value='Créer le profil' (click)='creerProfil()'/></td>
+                        <td colspan='2'><input type='button' class="button is-primary" value='Créer le profil' (click)='creerProfil()'/></td>
                     </tr> 
         
                 </table>

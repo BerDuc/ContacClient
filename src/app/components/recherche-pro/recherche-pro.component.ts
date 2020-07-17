@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ComponentRef, ViewContainerRef, ViewChild } from '@angular/core';
 import { Professionnel } from '../../model/Professionnel';
 import { ProfessionnelService } from '../../services/ProfessionnelService/professionnel.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { VignetteComponent } from '../vignette/vignette.component';
 
 
 @Component({
@@ -12,9 +13,16 @@ import { Router } from '@angular/router';
 })
 export class RechercheProComponent implements OnInit {
 
-  liste_pro: Professionnel[];
+  //variables en rapport avec les vignettes
+  @ViewChild("viewContainerRef", { read: ViewContainerRef })
+  VCR: ViewContainerRef;
+  child_unique_key: number = 0;
+  componentsReferences = Array<ComponentRef<VignetteComponent>>()
 
-  // criteres: string;
+
+  liste_pro: Professionnel[];
+  txtRecherche: string; 
+
 
   constructor(
     private router: Router,
@@ -23,6 +31,10 @@ export class RechercheProComponent implements OnInit {
   ngOnInit(): void {    
   }
   
+  chercher(){
+
+  }
+
   afficherPros(): void {
     this.servicePro.getPros().subscribe(pros => this.liste_pro = pros);  
   }
