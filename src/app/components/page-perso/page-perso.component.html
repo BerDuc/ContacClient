@@ -1,37 +1,57 @@
 
-<div class="section">
     <div class="tabs is-boxed">
         <ul>
-            <li [ngClass]="{'is-active':profil_tab===true}" (click)="change_tab('profil_tab')"><a>Curriculum Vitae</a></li>
+            <li [ngClass]="{'is-active':profil_tab===true}" (click)="change_tab('profil_tab')"><a>Profil</a></li>
             <li [ngClass]="{'is-active':cv_tab===true}" (click)="change_tab('cv_tab')"><a>Curriculum Vitae</a></li>
             <li [ngClass]="{'is-active':offres_tab===true}" (click)="change_tab('offres_tab')"><a>Offres</a></li>
-        </ul>
+        </ul>               
     </div>
-</div>
-<div class="section">
-    <div class="columns">
-        <div class="column is-1 is-offset-1">
-            <div class="column is-10">
-                <div class="table">
-                    <table>
-                        <tr>
-                            <td>Nom</td>
-                            <td><span>{{ pro.nom }},</span><span> {{ pro.prenom }}</span></td>
-                            <td><input class="button is-primary is-small" type="button" value="modifier" (click)=modifier_nom()></td>
-                        </tr>
-                        <tr>
-                            <td>Contact</td>
-                            <td>{{ pro.courriel }}</td>
-                            <td><input class="button is-primary is-small" type="button" value="modifier" (click)=modifier_contact()></td>
-                        </tr>
-                        <tr>
-                            <td>Spécialisation</td>
-                            <td>{{ pro.specialisation }}</td>
-                            <td><input class="button is-primary is-small" type="button" value="modifier" (click)=modifier_specialisation()></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+<div class="columns">
+    <div class="column is-offset-2">
+        <div class="table">
+            <table>
+                <tr rowspan="3"></tr>
+                <tr>
+                    <td>Nom</td>
+                    <td>
+                        <span [hidden]="mod_name"><span>{{ pro.nom }},</span><span> {{ pro.prenom }}</span></span>
+                        <span [hidden]="!mod_name">
+                            <span><input class="input" type="text" name="txt_last_name" [(ngModel)]="pro.nom"></span>
+                            <span><input class="input" type="text" name="txt_first_name" [(ngModel)]="pro.prenom"></span>
+                        </span>
+                    </td>
+                    <td>
+                        <span [hidden]="mod_name">
+                            <input class="button is-primary is-small"  id="btn_mod_name" type="button" value="modifier" (click)=modifier_nom()>
+                        </span>
+                        <span [hidden]="!mod_name">
+                            <input class="button is-warning is-small" type="button"  id="btn_save_name" value="OK" (click)=sauvegarder_nom()>
+                        </span>                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>Contact</td>
+                    <td>
+                        <span [hidden]="mod_contact">{{ pro.courriel }}</span>
+                        <span [hidden]="!mod_contact"><input class="input" type="email" id="txt_email" [(ngModel)]="pro.courriel"></span>
+                    </td>
+                    <td>
+                        <span [hidden]="mod_contact"><input class="button is-primary is-small" type="button" value="modifier" id="btn_mod_contact" (click)=modifier_contact()></span>
+                        <span [hidden]="!mod_contact"><input class="button is-warning is-small" type="button" value="OK" id="btn_save_contact" (click)=sauvegarder_contact()></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Spécialisation</td>
+                    <td>
+                        <span [hidden]="mod_specialisation">{{ pro.specialisation }}</span>
+                        <span [hidden]="!mod_specialisation"><input class="input" type="text" id="txt_specialization" [(ngModel)]="pro.specialisation"></span>
+                    </td>
+                    <td>
+                        <span [hidden]="mod_specialisation"><input class="button is-primary is-small" type="button"  id="btn_mod_specialisation" value="modifier" (click)=modifier_specialisation()></span>
+                        <span [hidden]="!mod_specialisation"><input class="button is-warning is-small" type="button"  id="btn_save_specialisation" value="OK" (click)=sauvegarder_specialisation()></span>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>

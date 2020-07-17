@@ -16,6 +16,10 @@ export class PagePersoComponent implements OnInit {
     profil_tab: boolean = true;
     cv_tab: boolean = false;
     offres_tab: boolean = false;
+    //boutons de moditication des champs
+    mod_name: boolean = false; 
+    mod_contact: boolean = false;
+    mod_specialisation: boolean = false;
 
 
   constructor(private service: ProfessionnelService) { 
@@ -26,9 +30,8 @@ export class PagePersoComponent implements OnInit {
   }
 
   get_pro(){
-  //  let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-//    this.service.getPro(currentUser.value.personne.utilisateurID).subscribe(pro => this.pro = pro); 
-    //this.service.currentPro.subscribe(pro => this.pro = pro);
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.service.getPro(currentUser.value.personne.utilisateurID).subscribe(pro => this.pro = pro); 
   }
 
   change_tab(tab_actif){
@@ -50,8 +53,28 @@ export class PagePersoComponent implements OnInit {
     }
   }
 
-    modifier_nom(){}
-    modifier_contact(){}
-    modifier_specialisation(){}
+    modifier_nom(){
+      this.mod_name = !this.mod_name;
+    }
+
+    sauvegarder_nom(){
+      this.modifier_nom();
+    }
+
+    modifier_contact(){
+      this.mod_contact = !this.mod_contact;
+    }
+
+    sauvegarder_contact(){
+      this.modifier_contact();
+    }
+
+    modifier_specialisation(){
+      this.mod_specialisation = !this.mod_specialisation;
+    }
+
+    sauvegarder_specialisation(){
+      this.modifier_specialisation();
+    }
 
 }
