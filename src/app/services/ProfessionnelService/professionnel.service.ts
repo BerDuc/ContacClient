@@ -4,7 +4,6 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { map } from 'rxjs/operators';
-import { Login } from 'src/app/model/Login';
 
 
 const proUrl = environment.base_url_Api+'Professionnels/';
@@ -27,18 +26,19 @@ export class ProfessionnelService {
   }
 
 
+  //manipulation des données du profil
   createPro(pro: Professionnel):Observable<Professionnel>{
     return this.http.post<Professionnel>(proUrl, JSON.stringify(pro), this.httpOptions);
   }
 
   modifPro(pro: Professionnel): Observable<any> {
-    var url = proUrl+"/"+pro.utilisateurID;
-    console.log(url);
-    console.log(JSON.stringify(pro));
-    return this.http.put(url, JSON.stringify(pro), this.httpOptions);
+    var url = proUrl+pro.utilisateurID;
+    return this.http.put(url, pro, this.httpOptions);
   }
-//login et logout
 
+
+
+//login et logout
 public get currentUserValue(): Professionnel{
   return this.currentProSubject.value;
 }

@@ -20,6 +20,7 @@ export class PagePersoComponent implements OnInit {
     mod_name: boolean = false; 
     mod_contact: boolean = false;
     mod_specialisation: boolean = false;
+    changements: boolean = false;
 
 
   constructor(private service: ProfessionnelService) { 
@@ -55,26 +56,36 @@ export class PagePersoComponent implements OnInit {
 
     modifier_nom(){
       this.mod_name = !this.mod_name;
+      this.changements = true;
     }
 
     sauvegarder_nom(){
       this.modifier_nom();
+      this.changements = true;
     }
 
     modifier_contact(){
       this.mod_contact = !this.mod_contact;
+      this.changements = true;
     }
 
     sauvegarder_contact(){
       this.modifier_contact();
+      this.changements = true;
     }
 
     modifier_specialisation(){
       this.mod_specialisation = !this.mod_specialisation;
+      this.changements = true;
     }
 
     sauvegarder_specialisation(){
       this.modifier_specialisation();
+      this.changements = true;
     }
 
+    updateProfile(){
+      this.service.modifPro(this.pro).subscribe(); 
+      this.changements = false;
+    }
 }

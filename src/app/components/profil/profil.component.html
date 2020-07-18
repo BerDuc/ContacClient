@@ -3,11 +3,11 @@
         <div class="column">
             <div><!-- La présentation -->
                 <nav class="panel is-primary">
-                    <p class="panel-heading">
-                        <span (click)='ouvrir_mode_modification()'>
-                            Présentation
-                        </span>
-                    </p>
+                    <span (click)='ouvrir_mode_modification()'>
+                        <p class="panel-heading">
+                                Présentation 
+                        </p>
+                    </span>
                     <span [hidden]="modeEdition">
                         <p class="panel-block" >
                             {{ pro.presentation }}
@@ -15,7 +15,7 @@
                     </span>
                     <span [hidden]="!modeEdition">
                         <textarea class="textarea" [(ngModel)]="pro.presentation"></textarea>
-                        <input type="button" class="button is-primary" name="btn_change_presentation" value="Terminé" (click)="changerPresentation()">
+                        <input type="button" class="button is-warning" name="btn_change_presentation" value="Terminé" (click)="changerPresentation()">
                     </span>
                 </nav>
             </div>

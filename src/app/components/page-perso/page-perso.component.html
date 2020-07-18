@@ -61,3 +61,10 @@
         [pro]="pro"
     ></app-profil>
 </div>
+<div class="section" [hidden]="!changements">
+    <div class="columns">
+        <div class="column is-offset-5">
+            <input class="button is-warning" type="button" value="Sauvegarder les changements" (click)="updateProfile()">
+        </div>
+    </div> 
+</div>
