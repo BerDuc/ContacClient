@@ -8,7 +8,6 @@ import {
 } from '@angular/core';
 import { Professionnel } from '../../model/Professionnel';
 import { ProfessionnelService } from '../../services/ProfessionnelService/professionnel.service';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { VignetteComponent } from '../vignette/vignette.component';
 
