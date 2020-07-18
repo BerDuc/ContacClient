@@ -1,15 +1,46 @@
-<div class="section"> <!--Afficher la liste des expertises avec la possibilité de faire des ajouts-->
-    <ol>
-        <li *ngFor="let e of pro.expertises">
-            {{ e.valeur }}
-        </li>
-    </ol>
-</div>        
+<div class="section">
+    <div class="columns">
+        <div class="column">
+            <div><!-- La présentation -->
+                <nav class="panel is-primary">
+                    <p class="panel-heading">
+                        <span (click)='ouvrir_mode_modification()'>
+                            Présentation
+                        </span>
+                    </p>
+                    <span [hidden]="modeEdition">
+                        <p class="panel-block" >
+                            {{ pro.presentation }}
+                        </p>
+                    </span>
+                    <span [hidden]="!modeEdition">
+                        <textarea class="textarea" [(ngModel)]="pro.presentation"></textarea>
+                        <input type="button" class="button is-primary" name="btn_change_presentation" value="Terminé" (click)="changerPresentation()">
+                    </span>
+                </nav>
+            </div>
 
-<div><!--Les disponibilités-->
-                
+            <div><!--Les disponibilités-->
+                <nav class="panel is-primary">
+                    <p class="panel-heading">
+                        Disponibilités
+                    </p>
+                    <p class="panel-block">
+                        à venir...
+                    </p>
+                </nav>
+            </div>
+        </div>
+        <div class="column"><!-- Table des offres de service-->
+            <nav class="panel is-primary">
+                <p class="panel-heading">
+                    Offres de service
+                </p>
+                <p class="panel-block">
+                    <span>à venir...</span>
+
+                </p>
+            </nav>
+        </div>
+    </div>
 </div>
-<div><!--Ici, le tableau des offres de service-->
-
-</div>
-

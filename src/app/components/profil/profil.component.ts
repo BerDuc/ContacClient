@@ -29,12 +29,12 @@ export class ProfilComponent implements OnInit {
 
 
 
-  ouvrirModification(): void {
+  ouvrir_mode_modification(): void {
     this.modeEdition = true;
   }
 
-  changerInfos(): void{
-    this.servicePro.modifPro(this.pro).subscribe();
+  changerPresentation(): void{
+  //  this.servicePro.modifPro(this.pro).subscribe();
     this.modeEdition = false;
   }
 

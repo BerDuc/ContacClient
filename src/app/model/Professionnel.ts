@@ -7,6 +7,8 @@ import { Entente } from './Entente';
 export class Professionnel extends Utilisateur {
     private _addrCv: string;
 
+    private _presentation: string;
+
     private _specialisation: string;
     
     private _expertises: Expertise[];
@@ -29,6 +31,12 @@ export class Professionnel extends Utilisateur {
     }
     public set specialisation(value: string) {
         this._specialisation = value;
+    }
+    public get presentation(): string {
+        return this._presentation;
+    }
+    public set presentation(value: string) {
+        this._presentation = value;
     }
     public get expertises(): Expertise[] {
         return this._expertises;
