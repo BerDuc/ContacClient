@@ -64,9 +64,10 @@ logout(){
 }
 
 ///recherche
-  searchPros(criteres: string):Observable<Professionnel[]> {
-    console.log(criteres);
-    return this.http.get<Professionnel[]>(proUrl+"expertise/"+criteres);
+  searchPros(critere: string, motscles: string):Observable<Professionnel[]> {
+    
+
+    return this.http.get<Professionnel[]>(proUrl+critere+"/"+motscles);
   }
 
   getPro(id: number): Observable<Professionnel> {

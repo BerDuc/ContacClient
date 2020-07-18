@@ -1,9 +1,9 @@
 <div class="section">
     <div class="columns">
         <div class="column is-offset-1 is-1">
-            <select class="select">
+            <select class="select" [(ngModel)]="critere">
                 <option>Nom</option>
-                <option>Specialité</option>
+                <option>Spécialité</option>
             </select>
         </div>
         <div class="column is-6">
@@ -13,4 +13,7 @@
             <input type="button" class="button is-primary" value="Rechercher" (click)=chercher()>
         </div>
     </div>
+</div>
+<div class="section">
+    <ng-template #viewContainerRef></ng-template>
 </div>
