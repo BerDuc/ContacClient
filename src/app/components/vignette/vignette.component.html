@@ -1,10 +1,24 @@
 <div>
     <div class="columns">
-        <div class="column is-1">
-            <img><br>
-            <p>{{pro.nom}}, {{pro.prenom}}</p><br>
-            <p></p><br>
-            <input type="button" class="button is-primary" value="Détails" (click)="afficherDetails()">
+        <div class="column is-2">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-header-title">
+                        {{pro.nom}}, {{pro.prenom}}
+                    </div>
+                </div>
+                <div class="card-image">
+                    <figure class="image is-64x64 is-rounded">
+                        <img src=".\img\placeholder_portrait.png">
+                    </figure>
+                </div>
+                <div  class="card-content">
+                    lorem ispum
+                </div>
+                <div class="card-footer">  
+                    <input type="button" class="button is-primary" value="Détails" (click)="afficherDetails()">  
+                </div>
+            </div>
         </div>
     </div>
 </div>
